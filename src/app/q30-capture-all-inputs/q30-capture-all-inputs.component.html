@@ -1,0 +1,10 @@
+<div class="question-card">
+      <h2>Q30 - Capture All Inputs</h2>
+      <form [formGroup]="form" (ngSubmit)="values = form.value">
+        <input formControlName="firstName" placeholder="First name" />
+        <input formControlName="lastName" placeholder="Last name" />
+        <input formControlName="city" placeholder="City" />
+        <button type="submit">Print</button>
+      </form>
+      <p>{{ values | json }}</p>
+    </div>

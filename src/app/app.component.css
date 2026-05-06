@@ -1,0 +1,227 @@
+.learning-app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  background: #f5f7fb;
+  color: #172033;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  background: #ffffff;
+  border-right: 1px solid #dde3ee;
+  overflow: hidden;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: #c62828;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.brand p {
+  margin: 4px 0 0;
+  color: #607089;
+  font-size: 0.9rem;
+}
+
+.search-box {
+  display: grid;
+  gap: 8px;
+  color: #3c4a5f;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.search-box input {
+  width: 100%;
+  min-height: 42px;
+  margin: 0;
+  border: 1px solid #cad4e3;
+  border-radius: 8px;
+  background: #fbfcff;
+  color: #172033;
+}
+
+.question-list {
+  display: grid;
+  gap: 8px;
+  padding-right: 4px;
+  overflow: auto;
+}
+
+.question-link {
+  width: 100%;
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 2px 10px;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #29364a;
+  text-align: left;
+  cursor: pointer;
+}
+
+.question-link:hover,
+.question-link.active {
+  background: #eef4ff;
+  border-color: #b8ccf4;
+}
+
+.question-link span {
+  grid-row: span 2;
+  color: #c62828;
+  font-weight: 800;
+}
+
+.question-link strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.question-link small {
+  color: #66758c;
+}
+
+.content {
+  min-width: 0;
+  padding: 28px;
+}
+
+.hero-panel,
+.practice-area,
+.route-preview {
+  max-width: 1040px;
+  margin: 0 auto 18px;
+  background: #ffffff;
+  border: 1px solid #dde3ee;
+  border-radius: 8px;
+}
+
+.hero-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #c62828;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.hero-panel h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.25;
+}
+
+.progress-text {
+  margin: 8px 0 0;
+  color: #607089;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-actions button {
+  min-height: 40px;
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid #c8d3e3;
+  border-radius: 8px;
+  background: #172033;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-actions button:first-child {
+  background: #ffffff;
+  color: #172033;
+}
+
+.practice-area {
+  padding: 8px;
+}
+
+.route-preview {
+  padding: 18px;
+}
+
+.route-preview h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #3c4a5f;
+}
+
+@media (max-width: 860px) {
+  .learning-app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    max-height: 440px;
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .hero-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .sidebar,
+  .content {
+    padding: 14px;
+  }
+
+  .hero-panel h2 {
+    font-size: 1.25rem;
+  }
+}

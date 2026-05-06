@@ -1,0 +1,5 @@
+<div class="question-card">
+      <h2>Q25 - Show Errors After Touch</h2>
+      <input name="name" required [(ngModel)]="name" #nameCtrl="ngModel" placeholder="Name" />
+      <p class="error" *ngIf="nameCtrl.invalid && nameCtrl.touched">Name is required.</p>
+    </div>

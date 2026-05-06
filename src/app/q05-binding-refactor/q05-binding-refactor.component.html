@@ -1,0 +1,41 @@
+<div style="padding: 20px">
+  <h2>Q5 — Binding Refactor</h2>
+
+  <!--  WRONG: String concatenation — does NOT work in Angular -->
+  <!--
+  <a href="/user/" + userId>Profile</a>
+  <p style="color: " + color>Text</p>
+  <p style="font-size: " + fontSize + "px">Text</p>
+  -->
+
+  <!--  1. Interpolation — use {{ }} inside text content -->
+  <p>Hello, <strong>{{ userName }}</strong>! Your ID is {{ userId }}.</p>
+
+  <!--  2. Property binding — use [ ] for HTML attributes -->
+  <a [href]="'/user/' + userId">View Profile (ID: {{ userId }})</a>
+
+  <!--  3. Style binding -->
+  <p [style.color]="color">This text is dynamically colored.</p>
+  <p [style.fontSize.px]="fontSize">This text is {{ fontSize }}px.</p>
+
+  <!--  4. Disabled binding -->
+  <button [disabled]="isDisabled">
+    {{ isDisabled ? 'Button is Disabled' : 'Button is Enabled' }}
+  </button>
+
+  <!--  5. Multiple styles using ngStyle -->
+  <p [ngStyle]="{ color: color, fontSize: fontSize + 'px', fontWeight: 'bold' }">
+    Styled with ngStyle
+  </p>
+
+  <hr style="margin-top:16px"/>
+
+  <!-- Live controls to see changes -->
+  <label>Color:
+    <input [(ngModel)]="color" placeholder="e.g. tomato" />
+  </label>
+  
+  <label>Font Size:
+    <input type="number" [(ngModel)]="fontSize" />
+  </label>
+</div>

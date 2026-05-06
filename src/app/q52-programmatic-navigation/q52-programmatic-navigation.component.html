@@ -1,0 +1,7 @@
+<div class="question-card">
+      <h2>Q52 - Navigate After Form Submit</h2>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <input formControlName="name" placeholder="Name" />
+        <button type="submit" [disabled]="form.invalid">Submit and Navigate</button>
+      </form>
+    </div>

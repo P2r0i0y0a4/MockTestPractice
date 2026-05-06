@@ -1,0 +1,56 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <h2>Signup</h2>
+
+  <div class="form-field">
+    <label for="username">Username</label>
+    <input id="username" type="text" formControlName="username">
+    <div class="error" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.hasError('required')">
+      Username is required.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="email">Gmail address</label>
+    <input id="email" type="email" formControlName="email">
+    <div class="error" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('required')">
+      Email is required.
+    </div>
+    <div class="error" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('gmail')">
+      Email must be a valid Gmail address ending with @gmail.com.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password">
+    <div class="error" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('required')">
+      Password is required.
+    </div>
+    <div class="error" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('numberRequired')">
+      Password must contain at least one numeric digit.
+    </div>
+  </div>
+
+  <div class="checkbox-field" *ngFor="let confirmation of confirmationsList">
+    <input
+      type="checkbox"
+      [id]="confirmation.value"
+      [value]="confirmation.value"
+      [checked]="isConfirmationSelected(confirmation.value)"
+      (change)="onCheckboxChange($event)"
+    >
+    <label [for]="confirmation.value">{{ confirmation.label }}</label>
+  </div>
+
+  <div class="error" *ngIf="submitted && !isOver16Selected">
+    You must be older than 16 to sign up.
+  </div>
+
+  <div class="error" *ngIf="submitted && !agreedTermsSelected">
+    You must agree to the terms and conditions.
+  </div>
+
+  <button type="submit" [disabled]="isSubmitDisabled">Sign Up</button>
+
+  <p class="message" *ngIf="signupMessage">{{ signupMessage }}</p>
+</form>

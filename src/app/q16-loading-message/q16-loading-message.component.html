@@ -1,0 +1,5 @@
+<div class="question-card">
+      <h2>Q16 - Loading Until Data Is Available</h2>
+      <p *ngIf="loading; else dataBlock">Loading...</p>
+      <ng-template #dataBlock><p>{{ data }}</p></ng-template>
+    </div>

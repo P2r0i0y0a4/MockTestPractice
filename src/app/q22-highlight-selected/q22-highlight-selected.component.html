@@ -1,0 +1,9 @@
+<div class="question-card">
+      <h2>Q22 - Highlight Selected Items</h2>
+      <button type="button"
+             *ngFor="let item of items"
+              [ngClass]="{ selected: item.selected }"
+              (click)="item.selected = !item.selected">
+        {{ item.name }}
+      </button>
+    </div>

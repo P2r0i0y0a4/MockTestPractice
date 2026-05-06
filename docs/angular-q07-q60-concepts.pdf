@@ -1,0 +1,746 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 3761 >>
+stream
+BT
+72 0 0 72 0 0 cm
+/F1 18 Tf
+1 0 0 1 0 10.972 Tm
+(Angular Q7-Q60 Concepts Explanation) Tj
+/F1 11 Tf
+1 0 0 1 0 10.653 Tm
+(Short notes for the separated Angular components.) Tj
+/F1 11 Tf
+1 0 0 1 0 10.431 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 10.208 Tm
+(Q7 - @Input Parent to Child Binding) Tj
+/F1 10 Tf
+1 0 0 1 0 9.958 Tm
+(Concept: @Input passes data from a parent component to a child component. The child declares) Tj
+/F1 10 Tf
+1 0 0 1 0 9.750 Tm
+(a property with @Input\(\), and the parent binds to it using property binding like) Tj
+/F1 10 Tf
+1 0 0 1 0 9.542 Tm
+([message]="parentMessage". This fixes cases where the child should display parent data but) Tj
+/F1 10 Tf
+1 0 0 1 0 9.333 Tm
+(receives nothing.) Tj
+/F1 10 Tf
+1 0 0 1 0 9.125 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 8.917 Tm
+(Q8 - @Output Child to Parent Event) Tj
+/F1 10 Tf
+1 0 0 1 0 8.667 Tm
+(Concept: @Output with EventEmitter sends data from a child component back to its parent. The) Tj
+/F1 10 Tf
+1 0 0 1 0 8.458 Tm
+(child emits a value, and the parent listens with event binding like) Tj
+/F1 10 Tf
+1 0 0 1 0 8.250 Tm
+(\(messageSent\)="onChildMessage\($event\)".) Tj
+/F1 10 Tf
+1 0 0 1 0 8.042 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 7.833 Tm
+(Q9 - Disable Button With Property Binding) Tj
+/F1 10 Tf
+1 0 0 1 0 7.583 Tm
+(Concept: [disabled] binds the disabled property of a button to a condition. Using) Tj
+/F1 10 Tf
+1 0 0 1 0 7.375 Tm
+(!name.trim\(\) disables submit when the input is empty or only spaces.) Tj
+/F1 10 Tf
+1 0 0 1 0 7.167 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 6.958 Tm
+(Q10 - Avoid Method Calls in Template) Tj
+/F1 10 Tf
+1 0 0 1 0 6.708 Tm
+(Concept: Angular runs template expressions many times during change detection. Instead of) Tj
+/F1 10 Tf
+1 0 0 1 0 6.500 Tm
+(calling a calculation method in the template repeatedly, compute the value once in) Tj
+/F1 10 Tf
+1 0 0 1 0 6.292 Tm
+(TypeScript and display the stored property.) Tj
+/F1 10 Tf
+1 0 0 1 0 6.083 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 5.875 Tm
+(Q11 - Dynamic Class Binding) Tj
+/F1 10 Tf
+1 0 0 1 0 5.625 Tm
+(Concept: ngClass applies CSS classes based on conditions. Example: [ngClass]="{ pass: marks) Tj
+/F1 10 Tf
+1 0 0 1 0 5.417 Tm
+(>= 50, fail: marks < 50 }" changes styling based on a numeric value.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.208 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 5.000 Tm
+(Q12 - Separate Click Events) Tj
+/F1 10 Tf
+1 0 0 1 0 4.750 Tm
+(Concept: Each button should have its own click handler. This prevents multiple actions from) Tj
+/F1 10 Tf
+1 0 0 1 0 4.542 Tm
+(running accidentally and keeps button behavior clear.) Tj
+/F1 10 Tf
+1 0 0 1 0 4.333 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 4.125 Tm
+(Q13 - Render List With *ngFor) Tj
+/F1 10 Tf
+1 0 0 1 0 3.875 Tm
+(Concept: *ngFor repeats an HTML element for every item in an array. Syntax: *ngFor="let user) Tj
+/F1 10 Tf
+1 0 0 1 0 3.667 Tm
+(of users".) Tj
+/F1 10 Tf
+1 0 0 1 0 3.458 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 3.250 Tm
+(Q14 - trackBy With *ngFor) Tj
+/F1 10 Tf
+1 0 0 1 0 3.000 Tm
+(Concept: trackBy helps Angular identify list items by a stable id. It improves performance) Tj
+/F1 10 Tf
+1 0 0 1 0 2.792 Tm
+(because Angular does not recreate unchanged DOM elements unnecessarily.) Tj
+/F1 10 Tf
+1 0 0 1 0 2.583 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 2.375 Tm
+(Q15 - *ngIf With else) Tj
+/F1 10 Tf
+1 0 0 1 0 2.125 Tm
+(Concept: *ngIf conditionally renders one block. The else template displays the alternative) Tj
+/F1 10 Tf
+1 0 0 1 0 1.917 Tm
+(block, so both sections do not appear at the same time.) Tj
+/F1 10 Tf
+1 0 0 1 0 1.708 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 1.500 Tm
+(Q16 - Loading State With *ngIf) Tj
+/F1 10 Tf
+1 0 0 1 0 1.250 Tm
+(Concept: A loading flag controls what appears. Show a loading message while data is) Tj
+/F1 10 Tf
+1 0 0 1 0 1.042 Tm
+(unavailable, then show the data when loading becomes false.) Tj
+/F1 10 Tf
+1 0 0 1 0 0.833 Tm
+() Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 12 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+4 0 obj
+<< /Length 3543 >>
+stream
+BT
+72 0 0 72 0 0 cm
+/F1 13 Tf
+1 0 0 1 0 10.972 Tm
+(Q17 - Empty Table Fallback) Tj
+/F1 10 Tf
+1 0 0 1 0 10.722 Tm
+(Concept: Check array length before rendering a table. If the array is empty, use ng-template) Tj
+/F1 10 Tf
+1 0 0 1 0 10.514 Tm
+(to show a fallback message such as No data available.) Tj
+/F1 10 Tf
+1 0 0 1 0 10.306 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 10.097 Tm
+(Q18 - Dropdown Conditional Fields) Tj
+/F1 10 Tf
+1 0 0 1 0 9.847 Tm
+(Concept: Bind the selected dropdown value with ngModel, then use *ngIf to show extra fields) Tj
+/F1 10 Tf
+1 0 0 1 0 9.639 Tm
+(based on the selected option.) Tj
+/F1 10 Tf
+1 0 0 1 0 9.431 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 9.222 Tm
+(Q19 - Nested *ngFor) Tj
+/F1 10 Tf
+1 0 0 1 0 8.972 Tm
+(Concept: Use one *ngFor for the outer list and another *ngFor inside it for nested arrays.) Tj
+/F1 10 Tf
+1 0 0 1 0 8.764 Tm
+(Each loop needs its own variable name.) Tj
+/F1 10 Tf
+1 0 0 1 0 8.556 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 8.347 Tm
+(Q20 - One Structural Directive Per Element) Tj
+/F1 10 Tf
+1 0 0 1 0 8.097 Tm
+(Concept: Angular allows only one structural directive, such as *ngFor or *ngIf, on the same) Tj
+/F1 10 Tf
+1 0 0 1 0 7.889 Tm
+(element. Use ng-container to separate them.) Tj
+/F1 10 Tf
+1 0 0 1 0 7.681 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 7.472 Tm
+(Q21 - Show First Five Items) Tj
+/F1 10 Tf
+1 0 0 1 0 7.222 Tm
+(Concept: The slice pipe can display part of an array without changing the original array.) Tj
+/F1 10 Tf
+1 0 0 1 0 7.014 Tm
+(Example: items | slice:0:5.) Tj
+/F1 10 Tf
+1 0 0 1 0 6.806 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 6.597 Tm
+(Q22 - Conditional Styling for Selected Items) Tj
+/F1 10 Tf
+1 0 0 1 0 6.347 Tm
+(Concept: ngClass can highlight selected items. Store selected state in TypeScript and apply) Tj
+/F1 10 Tf
+1 0 0 1 0 6.139 Tm
+(a CSS class when the item is selected.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.931 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 5.722 Tm
+(Q23 - Template Driven Form Binding) Tj
+/F1 10 Tf
+1 0 0 1 0 5.472 Tm
+(Concept: Template-driven forms use FormsModule and [\(ngModel\)]. Each input needs a name) Tj
+/F1 10 Tf
+1 0 0 1 0 5.264 Tm
+(attribute so Angular can track the field.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.056 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 4.847 Tm
+(Q24 - Required Field Validation) Tj
+/F1 10 Tf
+1 0 0 1 0 4.597 Tm
+(Concept: Add required to inputs and disable submit with [disabled]="form.invalid". This) Tj
+/F1 10 Tf
+1 0 0 1 0 4.389 Tm
+(prevents invalid form submission.) Tj
+/F1 10 Tf
+1 0 0 1 0 4.181 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 3.972 Tm
+(Q25 - Show Errors After Touch) Tj
+/F1 10 Tf
+1 0 0 1 0 3.722 Tm
+(Concept: Use control.invalid && control.touched so validation messages appear only after the) Tj
+/F1 10 Tf
+1 0 0 1 0 3.514 Tm
+(user interacts with the field.) Tj
+/F1 10 Tf
+1 0 0 1 0 3.306 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 3.097 Tm
+(Q26 - Email Validation) Tj
+/F1 10 Tf
+1 0 0 1 0 2.847 Tm
+(Concept: The email validator checks email format in template-driven forms. Use required) Tj
+/F1 10 Tf
+1 0 0 1 0 2.639 Tm
+(email with ngModel.) Tj
+/F1 10 Tf
+1 0 0 1 0 2.431 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 2.222 Tm
+(Q27 - Reactive Form Initialization) Tj
+/F1 10 Tf
+1 0 0 1 0 1.972 Tm
+(Concept: Reactive forms are created in TypeScript using FormBuilder. The template connects) Tj
+/F1 10 Tf
+1 0 0 1 0 1.764 Tm
+(with [formGroup] and formControlName.) Tj
+/F1 10 Tf
+1 0 0 1 0 1.556 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 1.347 Tm
+(Q28 - Password Length Validator) Tj
+/F1 10 Tf
+1 0 0 1 0 1.097 Tm
+(Concept: Validators.minLength checks minimum password length. The template can show an error) Tj
+/F1 10 Tf
+1 0 0 1 0 0.889 Tm
+(using hasError\('minlength'\).) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 12 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 3451 >>
+stream
+BT
+72 0 0 72 0 0 cm
+/F1 10 Tf
+1 0 0 1 0 10.972 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 10.764 Tm
+(Q29 - Reset Form After Submit) Tj
+/F1 10 Tf
+1 0 0 1 0 10.514 Tm
+(Concept: Call form.reset\(\) after successful submit to clear all form controls.) Tj
+/F1 10 Tf
+1 0 0 1 0 10.306 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 10.097 Tm
+(Q30 - Capture All Form Inputs) Tj
+/F1 10 Tf
+1 0 0 1 0 9.847 Tm
+(Concept: Every input must be included in the FormGroup and must use the correct) Tj
+/F1 10 Tf
+1 0 0 1 0 9.639 Tm
+(formControlName. Then form.value contains all fields.) Tj
+/F1 10 Tf
+1 0 0 1 0 9.431 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 9.222 Tm
+(Q31 - Conditionally Required Field) Tj
+/F1 10 Tf
+1 0 0 1 0 8.972 Tm
+(Concept: Subscribe to one control value and add or remove Validators.required on another) Tj
+/F1 10 Tf
+1 0 0 1 0 8.764 Tm
+(control. Always call updateValueAndValidity\(\) after changing validators.) Tj
+/F1 10 Tf
+1 0 0 1 0 8.556 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 8.347 Tm
+(Q32 - Dropdown Updates Another Field) Tj
+/F1 10 Tf
+1 0 0 1 0 8.097 Tm
+(Concept: valueChanges can react to a dropdown selection and patch another form control) Tj
+/F1 10 Tf
+1 0 0 1 0 7.889 Tm
+(automatically.) Tj
+/F1 10 Tf
+1 0 0 1 0 7.681 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 7.472 Tm
+(Q33 - Dynamic Form Fields) Tj
+/F1 10 Tf
+1 0 0 1 0 7.222 Tm
+(Concept: FormArray stores repeated form controls, such as skills. Use push\(\) to add a new) Tj
+/F1 10 Tf
+1 0 0 1 0 7.014 Tm
+(control dynamically.) Tj
+/F1 10 Tf
+1 0 0 1 0 6.806 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 6.597 Tm
+(Q34 - Consistent Form Approach) Tj
+/F1 10 Tf
+1 0 0 1 0 6.347 Tm
+(Concept: Do not mix template-driven and reactive form APIs in the same form. Use either) Tj
+/F1 10 Tf
+1 0 0 1 0 6.139 Tm
+(ngModel or reactive forms consistently.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.931 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 5.722 Tm
+(Q35 - Reactive Errors After Interaction) Tj
+/F1 10 Tf
+1 0 0 1 0 5.472 Tm
+(Concept: Reactive forms also use invalid and touched checks to avoid showing validation) Tj
+/F1 10 Tf
+1 0 0 1 0 5.264 Tm
+(errors immediately on page load.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.056 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 4.847 Tm
+(Q36 - Disable Submit Until Valid) Tj
+/F1 10 Tf
+1 0 0 1 0 4.597 Tm
+(Concept: Bind the submit button disabled state to form.invalid so users can submit only when) Tj
+/F1 10 Tf
+1 0 0 1 0 4.389 Tm
+(the whole form is valid.) Tj
+/F1 10 Tf
+1 0 0 1 0 4.181 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 3.972 Tm
+(Q37 - Move HTTP Logic to Service) Tj
+/F1 10 Tf
+1 0 0 1 0 3.722 Tm
+(Concept: Components should focus on UI. API calls belong in services so the code is reusable) Tj
+/F1 10 Tf
+1 0 0 1 0 3.514 Tm
+(and easier to test.) Tj
+/F1 10 Tf
+1 0 0 1 0 3.306 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 3.097 Tm
+(Q38 - HTTP GET in Service) Tj
+/F1 10 Tf
+1 0 0 1 0 2.847 Tm
+(Concept: HttpClient.get\(\) fetches data from an API. Import HttpClientModule and inject) Tj
+/F1 10 Tf
+1 0 0 1 0 2.639 Tm
+(HttpClient into the service.) Tj
+/F1 10 Tf
+1 0 0 1 0 2.431 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 2.222 Tm
+(Q39 - Display API Response) Tj
+/F1 10 Tf
+1 0 0 1 0 1.972 Tm
+(Concept: Subscribe to the service observable, store the response in a component property,) Tj
+/F1 10 Tf
+1 0 0 1 0 1.764 Tm
+(and render it with *ngFor.) Tj
+/F1 10 Tf
+1 0 0 1 0 1.556 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 1.347 Tm
+(Q40 - HTTP POST Payload) Tj
+/F1 10 Tf
+1 0 0 1 0 1.097 Tm
+(Concept: HttpClient.post\(url, payload\) sends data to the server. The payload should be an) Tj
+/F1 10 Tf
+1 0 0 1 0 0.889 Tm
+(object containing the form or item data.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 12 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 3503 >>
+stream
+BT
+72 0 0 72 0 0 cm
+/F1 10 Tf
+1 0 0 1 0 10.972 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 10.764 Tm
+(Q41 - Refresh UI After Delete) Tj
+/F1 10 Tf
+1 0 0 1 0 10.514 Tm
+(Concept: After deleting an item, update the displayed array or re-fetch data. The UI changes) Tj
+/F1 10 Tf
+1 0 0 1 0 10.306 Tm
+(only when the component data changes.) Tj
+/F1 10 Tf
+1 0 0 1 0 10.097 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 9.889 Tm
+(Q42 - Shared State Service) Tj
+/F1 10 Tf
+1 0 0 1 0 9.639 Tm
+(Concept: BehaviorSubject stores shared state. Components subscribe to the observable so) Tj
+/F1 10 Tf
+1 0 0 1 0 9.431 Tm
+(changes are reflected everywhere.) Tj
+/F1 10 Tf
+1 0 0 1 0 9.222 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 9.014 Tm
+(Q43 - Fetch Data in ngOnInit) Tj
+/F1 10 Tf
+1 0 0 1 0 8.764 Tm
+(Concept: ngOnInit is the correct lifecycle hook for initialization work such as loading) Tj
+/F1 10 Tf
+1 0 0 1 0 8.556 Tm
+(data. Constructors should mainly inject dependencies.) Tj
+/F1 10 Tf
+1 0 0 1 0 8.347 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 8.139 Tm
+(Q44 - API Error Handling) Tj
+/F1 10 Tf
+1 0 0 1 0 7.889 Tm
+(Concept: catchError prevents the app from crashing when an API fails. Store a friendly error) Tj
+/F1 10 Tf
+1 0 0 1 0 7.681 Tm
+(message and return a fallback observable.) Tj
+/F1 10 Tf
+1 0 0 1 0 7.472 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 7.264 Tm
+(Q45 - Avoid Stale Data After Update) Tj
+/F1 10 Tf
+1 0 0 1 0 7.014 Tm
+(Concept: After updating, either update the local array or re-fetch from the service so the) Tj
+/F1 10 Tf
+1 0 0 1 0 6.806 Tm
+(UI shows fresh data.) Tj
+/F1 10 Tf
+1 0 0 1 0 6.597 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 6.389 Tm
+(Q46 - Centralized API Logic) Tj
+/F1 10 Tf
+1 0 0 1 0 6.139 Tm
+(Concept: Duplicate API code in many components should be moved into one service method.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.931 Tm
+(Components call the service instead of repeating logic.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.722 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 5.514 Tm
+(Q47 - Loading Indicator During API Call) Tj
+/F1 10 Tf
+1 0 0 1 0 5.264 Tm
+(Concept: Set loading true before the call and false when it finishes. finalize\(\) is useful) Tj
+/F1 10 Tf
+1 0 0 1 0 5.056 Tm
+(because it runs for both success and error.) Tj
+/F1 10 Tf
+1 0 0 1 0 4.847 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 4.639 Tm
+(Q48 - Avoid Repeated API Calls) Tj
+/F1 10 Tf
+1 0 0 1 0 4.389 Tm
+(Concept: Do not call API methods directly from templates. Load data in ngOnInit or from a) Tj
+/F1 10 Tf
+1 0 0 1 0 4.181 Tm
+(button/event to avoid repeated calls during change detection.) Tj
+/F1 10 Tf
+1 0 0 1 0 3.972 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 3.764 Tm
+(Q49 - Routing Configuration) Tj
+/F1 10 Tf
+1 0 0 1 0 3.514 Tm
+(Concept: Routes connect URL paths to components. RouterModule.forRoot\(routes\) enables) Tj
+/F1 10 Tf
+1 0 0 1 0 3.306 Tm
+(Angular navigation.) Tj
+/F1 10 Tf
+1 0 0 1 0 3.097 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 2.889 Tm
+(Q50 - routerLink Navigation) Tj
+/F1 10 Tf
+1 0 0 1 0 2.639 Tm
+(Concept: Use routerLink instead of href for Angular navigation. routerLink changes routes) Tj
+/F1 10 Tf
+1 0 0 1 0 2.431 Tm
+(without reloading the whole page.) Tj
+/F1 10 Tf
+1 0 0 1 0 2.222 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 2.014 Tm
+(Q51 - Route Parameters) Tj
+/F1 10 Tf
+1 0 0 1 0 1.764 Tm
+(Concept: ActivatedRoute reads route parameters such as /question/51. Use paramMap to get the) Tj
+/F1 10 Tf
+1 0 0 1 0 1.556 Tm
+(parameter value.) Tj
+/F1 10 Tf
+1 0 0 1 0 1.347 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 1.139 Tm
+(Q52 - Programmatic Navigation) Tj
+/F1 10 Tf
+1 0 0 1 0 0.889 Tm
+(Concept: Router.navigate\(\) changes routes from TypeScript, commonly after a successful form) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 12 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2172 >>
+stream
+BT
+72 0 0 72 0 0 cm
+/F1 10 Tf
+1 0 0 1 0 10.972 Tm
+(submission.) Tj
+/F1 10 Tf
+1 0 0 1 0 10.764 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 10.556 Tm
+(Q53 - Wildcard Route) Tj
+/F1 10 Tf
+1 0 0 1 0 10.306 Tm
+(Concept: A wildcard route path '**' catches unknown URLs and redirects users to a safe) Tj
+/F1 10 Tf
+1 0 0 1 0 10.097 Tm
+(fallback page.) Tj
+/F1 10 Tf
+1 0 0 1 0 9.889 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 9.681 Tm
+(Q54 - Nested Routes) Tj
+/F1 10 Tf
+1 0 0 1 0 9.431 Tm
+(Concept: Child routes render inside a router-outlet placed in the parent component template.) Tj
+/F1 10 Tf
+1 0 0 1 0 9.222 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 9.014 Tm
+(Q55 - Query Parameters) Tj
+/F1 10 Tf
+1 0 0 1 0 8.764 Tm
+(Concept: queryParams sends optional URL values such as ?filter=active.) Tj
+/F1 10 Tf
+1 0 0 1 0 8.556 Tm
+(ActivatedRoute.queryParamMap reads them.) Tj
+/F1 10 Tf
+1 0 0 1 0 8.347 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 8.139 Tm
+(Q56 - Date Pipe) Tj
+/F1 10 Tf
+1 0 0 1 0 7.889 Tm
+(Concept: The date pipe formats raw date values into readable strings, such as mediumDate.) Tj
+/F1 10 Tf
+1 0 0 1 0 7.681 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 7.472 Tm
+(Q57 - Uppercase Pipe) Tj
+/F1 10 Tf
+1 0 0 1 0 7.222 Tm
+(Concept: The uppercase pipe changes displayed text to uppercase without modifying the) Tj
+/F1 10 Tf
+1 0 0 1 0 7.014 Tm
+(original data.) Tj
+/F1 10 Tf
+1 0 0 1 0 6.806 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 6.597 Tm
+(Q58 - Truncate Text) Tj
+/F1 10 Tf
+1 0 0 1 0 6.347 Tm
+(Concept: The slice pipe can shorten long text in the UI. Add ellipsis manually after the) Tj
+/F1 10 Tf
+1 0 0 1 0 6.139 Tm
+(sliced text.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.931 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 5.722 Tm
+(Q59 - Currency Pipe) Tj
+/F1 10 Tf
+1 0 0 1 0 5.472 Tm
+(Concept: The currency pipe formats numbers as currency, such as INR or USD.) Tj
+/F1 10 Tf
+1 0 0 1 0 5.264 Tm
+() Tj
+/F1 13 Tf
+1 0 0 1 0 5.056 Tm
+(Q60 - Mini App Debugging) Tj
+/F1 10 Tf
+1 0 0 1 0 4.806 Tm
+(Concept: A working Angular mini app combines list rendering, forms, validation, service) Tj
+/F1 10 Tf
+1 0 0 1 0 4.597 Tm
+(data, and routing. Fixing it means ensuring data binds, forms submit, and navigation uses) Tj
+/F1 10 Tf
+1 0 0 1 0 4.389 Tm
+(Angular Router.) Tj
+/F1 10 Tf
+1 0 0 1 0 4.181 Tm
+() Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 12 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R] /Count 5 >>
+endobj
+13 0 obj
+<< /Type /Catalog /Pages 12 0 R >>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000003892 00000 n 
+0000004019 00000 n 
+0000007614 00000 n 
+0000007741 00000 n 
+0000011244 00000 n 
+0000011371 00000 n 
+0000014926 00000 n 
+0000015053 00000 n 
+0000017278 00000 n 
+0000017407 00000 n 
+0000017490 00000 n 
+trailer
+<< /Size 14 /Root 13 0 R >>
+startxref
+17541
+%%EOF

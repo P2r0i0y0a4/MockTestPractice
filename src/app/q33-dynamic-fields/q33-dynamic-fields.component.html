@@ -1,0 +1,16 @@
+<div class="question-card">
+      <h2>Q33 - Dynamic Skills Fields</h2>
+      <form [formGroup]="form"  (ngSubmit)="onSubmit()">
+        <div formArrayName="skills">
+          <div *ngFor="let skill of skills.controls; let i = index">
+            <input [formControlName]="i" placeholder="Skill" />
+          </div>
+        </div>
+        <button type="button" (click)="addSkill()">Add Skill</button>
+
+        <button type="submit" [disabled]="form.invalid">
+    Submit
+  </button>
+      </form>
+      <p>{{submittedData |json}}</p>
+    </div>

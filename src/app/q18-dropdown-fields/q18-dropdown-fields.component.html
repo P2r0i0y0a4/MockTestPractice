@@ -1,0 +1,10 @@
+<div class="question-card">
+      <h2>Q18 - Dropdown Conditional Fields</h2>
+      <select [(ngModel)]="type">
+        <option value="">Select type</option>
+        <option value="student">Student</option>
+        <option value="employee">Employee</option>
+      </select>
+      <input *ngIf="type === 'student'" placeholder="Roll number" />
+      <input *ngIf="type === 'employee'" placeholder="Employee id" />
+    </div>

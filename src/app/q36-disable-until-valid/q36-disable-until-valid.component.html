@@ -1,0 +1,7 @@
+<div class="question-card">
+      <h2>Q36 - Disable Submit Until Form Valid</h2>
+      <form [formGroup]="form">
+        <input formControlName="name" placeholder="Name" />
+        <button type="button" [disabled]="form.invalid">Submit</button>
+      </form>
+    </div>

@@ -1,0 +1,118 @@
+<div class="learning-app">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">A</span>
+      <div>
+        <h1>{{ title }}</h1>
+        <p>Learn Angular question by question</p>
+      </div>
+    </div>
+
+    <label class="search-box">
+      <span>Search questions</span>
+      <input
+        type="search"
+        [(ngModel)]="searchText"
+        placeholder="Example: q03, form, routing"
+      >
+    </label>
+
+    <div class="question-list" aria-label="Question list">
+      <button
+        type="button"
+        *ngFor="let question of filteredQuestions"
+        class="question-link"
+        [class.active]="question.id === selectedQuestion"
+        (click)="selectQuestion(question.id)"
+      >
+        <span>Q{{ question.id.toString().padStart(2, '0') }}</span>
+        <strong>{{ question.title }}</strong>
+        <small>{{ question.topic }}</small>
+      </button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <section class="hero-panel">
+      <div>
+        <p class="eyebrow">{{ currentQuestion.topic }}</p>
+        <h2>Q{{ currentQuestion.id.toString().padStart(2, '0') }} - {{ currentQuestion.title }}</h2>
+        <p class="progress-text">Question {{ selectedQuestion }} of {{ questions.length }}</p>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" (click)="previousQuestion()" [disabled]="selectedQuestion === 1">Previous</button>
+        <button type="button" (click)="nextQuestion()" [disabled]="selectedQuestion === questions.length">Next</button>
+      </div>
+    </section>
+
+    <section class="practice-area" *ngIf="!showRoutedPage">
+      <ng-container [ngSwitch]="selectedQuestion">
+        <app-q01-binding *ngSwitchCase="1"></app-q01-binding>
+        <app-q02-counter *ngSwitchCase="2"></app-q02-counter>
+        <app-q03-toggle *ngSwitchCase="3"></app-q03-toggle>
+        <app-q04-image *ngSwitchCase="4"></app-q04-image>
+        <app-q05-binding-refactor *ngSwitchCase="5"></app-q05-binding-refactor>
+        <app-q06-lifecycle *ngSwitchCase="6"></app-q06-lifecycle>
+        <app-q07-parent *ngSwitchCase="7"></app-q07-parent>
+        <app-q08-output-event *ngSwitchCase="8"></app-q08-output-event>
+        <app-q09-disable-submit *ngSwitchCase="9"></app-q09-disable-submit>
+        <app-q10-precomputed-value *ngSwitchCase="10"></app-q10-precomputed-value>
+        <app-q11-dynamic-class *ngSwitchCase="11"></app-q11-dynamic-class>
+        <app-q12-click-events *ngSwitchCase="12"></app-q12-click-events>
+        <app-q13-user-loop *ngSwitchCase="13"></app-q13-user-loop>
+        <app-q14-track-by *ngSwitchCase="14"></app-q14-track-by>
+        <app-q15-ngif-else *ngSwitchCase="15"></app-q15-ngif-else>
+        <app-q16-loading-message *ngSwitchCase="16"></app-q16-loading-message>
+        <app-q17-empty-table *ngSwitchCase="17"></app-q17-empty-table>
+        <app-q18-dropdown-fields *ngSwitchCase="18"></app-q18-dropdown-fields>
+        <app-q19-nested-lists *ngSwitchCase="19"></app-q19-nested-lists>
+        <app-q20-structural-directives *ngSwitchCase="20"></app-q20-structural-directives>
+        <app-q21-first-five *ngSwitchCase="21"></app-q21-first-five>
+        <app-q22-highlight-selected *ngSwitchCase="22"></app-q22-highlight-selected>
+        <app-q23-template-form *ngSwitchCase="23"></app-q23-template-form>
+        <app-q24-template-validation *ngSwitchCase="24"></app-q24-template-validation>
+        <app-q25-touched-errors *ngSwitchCase="25"></app-q25-touched-errors>
+        <app-q26-email-validation *ngSwitchCase="26"></app-q26-email-validation>
+        <app-q27-form-builder *ngSwitchCase="27"></app-q27-form-builder>
+        <app-q28-password-length *ngSwitchCase="28"></app-q28-password-length>
+        <app-q29-reset-form *ngSwitchCase="29"></app-q29-reset-form>
+        <app-q30-capture-all-inputs *ngSwitchCase="30"></app-q30-capture-all-inputs>
+        <app-q31-conditional-required *ngSwitchCase="31"></app-q31-conditional-required>
+        <app-q32-linked-dropdown *ngSwitchCase="32"></app-q32-linked-dropdown>
+        <app-q33-dynamic-fields *ngSwitchCase="33"></app-q33-dynamic-fields>
+        <app-q34-consistent-form *ngSwitchCase="34"></app-q34-consistent-form>
+        <app-q35-errors-after-interaction *ngSwitchCase="35"></app-q35-errors-after-interaction>
+        <app-q36-disable-until-valid *ngSwitchCase="36"></app-q36-disable-until-valid>
+        <app-q37-api-service *ngSwitchCase="37"></app-q37-api-service>
+        <app-q38-http-get *ngSwitchCase="38"></app-q38-http-get>
+        <app-q39-display-api-data *ngSwitchCase="39"></app-q39-display-api-data>
+        <app-q40-http-post *ngSwitchCase="40"></app-q40-http-post>
+        <app-q41-delete-refresh *ngSwitchCase="41"></app-q41-delete-refresh>
+        <app-q42-shared-state *ngSwitchCase="42"></app-q42-shared-state>
+        <app-q43-fetch-on-init *ngSwitchCase="43"></app-q43-fetch-on-init>
+        <app-q44-error-handling *ngSwitchCase="44"></app-q44-error-handling>
+        <app-q45-update-data *ngSwitchCase="45"></app-q45-update-data>
+        <app-q46-centralized-api *ngSwitchCase="46"></app-q46-centralized-api>
+        <app-q47-loading-state *ngSwitchCase="47"></app-q47-loading-state>
+        <app-q48-no-repeated-fetch *ngSwitchCase="48"></app-q48-no-repeated-fetch>
+        <app-q49-routing *ngSwitchCase="49"></app-q49-routing>
+        <app-q50-router-links *ngSwitchCase="50"></app-q50-router-links>
+        <app-q51-route-param *ngSwitchCase="51"></app-q51-route-param>
+        <app-q52-programmatic-navigation *ngSwitchCase="52"></app-q52-programmatic-navigation>
+        <app-q53-wildcard-route *ngSwitchCase="53"></app-q53-wildcard-route>
+        <app-q54-nested-routes *ngSwitchCase="54"></app-q54-nested-routes>
+        <app-q55-query-params *ngSwitchCase="55"></app-q55-query-params>
+        <app-q56-date-pipe *ngSwitchCase="56"></app-q56-date-pipe>
+        <app-q57-uppercase-pipe *ngSwitchCase="57"></app-q57-uppercase-pipe>
+        <app-q58-truncate-text *ngSwitchCase="58"></app-q58-truncate-text>
+        <app-q59-currency-pipe *ngSwitchCase="59"></app-q59-currency-pipe>
+        <app-q60-mini-app *ngSwitchCase="60"></app-q60-mini-app>
+      </ng-container>
+    </section>
+
+    <section class="practice-area" *ngIf="showRoutedPage">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

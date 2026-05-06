@@ -1,0 +1,8 @@
+<div class="question-card">
+      <h2>Q27 - Reactive Form With FormBuilder</h2>
+      <form [formGroup]="form">
+        <input formControlName="name" placeholder="Name" />
+        <input formControlName="email" placeholder="Email" />
+      </form>
+      <p>{{ form.value | json }}</p>
+    </div>

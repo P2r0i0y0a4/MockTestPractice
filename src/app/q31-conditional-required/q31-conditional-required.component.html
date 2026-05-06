@@ -1,0 +1,8 @@
+<div class="question-card">
+      <h2>Q31 - Conditionally Required Field</h2>
+      <form [formGroup]="form">
+        <label><input type="checkbox" formControlName="hasCompany" /> Has company</label>
+        <input formControlName="companyName" placeholder="Company name" />
+        <p *ngIf="f.companyName.invalid && f.companyName.touched">Company is required.</p>
+      </form>
+    </div>

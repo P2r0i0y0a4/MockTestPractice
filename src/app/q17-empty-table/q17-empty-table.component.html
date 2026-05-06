@@ -1,0 +1,8 @@
+<div class="question-card">
+      <h2>Q17 - Empty Table Fallback</h2>
+      <table *ngIf="rows.length; else emptyTable">
+        <tr><th>Name</th><th>Role</th></tr>
+        <tr *ngFor="let row of rows"><td>{{ row.name }}</td><td>{{ row.role }}</td></tr>
+      </table>
+      <ng-template #emptyTable><p>No data available.</p></ng-template>
+    </div>

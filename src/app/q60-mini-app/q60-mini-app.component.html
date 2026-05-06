@@ -1,0 +1,12 @@
+<div class="question-card">
+      <h2>Q60 - Mini App Debugged</h2>
+      <form [formGroup]="form" (ngSubmit)="addUser()">
+        <input formControlName="name" placeholder="Name" />
+        <input formControlName="email" placeholder="Email" />
+        <button type="submit" [disabled]="form.invalid">Add User</button>
+      </form>
+      <ul>
+        <li *ngFor="let user of users; trackBy: trackById">{{ user.name }} - {{ user.email }}</li>
+      </ul>
+      <a routerLink="/question/60">Navigation works</a>
+    </div>

@@ -1,0 +1,16 @@
+<div style="padding: 20px">
+  <h2>Q3 — Toggle Visibility</h2>
+
+  <button (click)="toggle()">
+    {{ isVisible ? 'Hide Section' : 'Show Section' }}
+  </button>
+
+  <section *ngIf="isVisible" style="margin-top:10px; padding:10px; background:#e0f7fa;">
+    <h3>👋 Hello! I am visible now.</h3>
+    <p>I appear and disappear based on the toggle button.</p>
+  </section>
+  <p [ngClass]="['priya','ajitha']">Text</p>
+  <p [ngStyle]="{'color':'red'}">Hello</p>
+
+  <p>Current state: <strong>{{ isVisible ? 'Visible' : 'Hidden' }}</strong></p>
+</div>

@@ -1,0 +1,39 @@
+<div style="padding: 20px">
+  <h2>Q6 — Lifecycle Hooks</h2>
+
+  <!-- Lifecycle order tracker -->
+  <p style="color: gray; font-size: 13px">{{ initMessage }}</p>
+
+  <!--  Show loading until data is ready -->
+  <div *ngIf="isLoading" style="color: orange">
+    ⏳ Loading user data...
+  </div>
+
+  <!--  Guard with *ngIf before accessing user properties -->
+  <div *ngIf="!isLoading && user"
+       style="margin-top:10px; padding:12px;
+              background:#f0fff4; border-left: 4px solid green">
+    <h3>👤 User Profile</h3>
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+    <p><strong>Role:</strong> {{ user.role }}</p>
+  </div>
+
+  <!--  Safe navigation operator alternative -->
+  <div style="margin-top:12px; padding:10px; background:#fff3e0">
+    <p><strong>Safe Navigation Operator (?.):</strong></p>
+    <p>Name: {{ user?.name ?? 'Not loaded yet' }}</p>
+    <p>Email: {{ user?.email ?? 'Not loaded yet' }}</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

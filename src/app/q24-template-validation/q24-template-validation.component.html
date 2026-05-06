@@ -1,0 +1,12 @@
+<div class="question-card">
+      <h2>Q24 - Prevent Invalid Template Form Submit</h2>
+      <form #userForm="ngForm" (ngSubmit)="submitted = true">
+        <input name="name" required 
+               #name="ngModel" ngModel
+               placeholder="Required name" />
+        <p *ngIf = "name.invalid && name.touched" style ="color:red">Name is required</p>
+        <button type="submit" 
+                [disabled]="userForm.invalid">Submit</button>
+      </form>
+      <p *ngIf="submitted">Submitted</p>
+    </div>

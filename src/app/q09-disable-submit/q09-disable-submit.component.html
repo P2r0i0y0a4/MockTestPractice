@@ -1,0 +1,5 @@
+<div class="question-card">
+      <h2>Q9 - Disable Submit When Input Is Empty</h2>
+      <input [(ngModel)]="name" placeholder="Enter name" />
+      <button type="button" [disabled]="!name.trim()">Submit</button>
+    </div>

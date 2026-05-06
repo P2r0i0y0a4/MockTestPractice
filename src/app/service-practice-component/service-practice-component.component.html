@@ -1,0 +1,38 @@
+<!-- Show all users -->
+<h1>Api Services Explanation</h1>
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.name }} — {{ user.email }}
+  </li>
+</ul>
+
+<!-- Show single user -->
+<div *ngIf="singleUser">
+  <p>{{ singleUser.name }} - {{singleUser.email}}</p>
+</div>
+
+<input [(ngModel)]="newUser.name"  placeholder="Name" />
+<input [(ngModel)]="newUser.email" placeholder="Email" />
+<button (click)="addUser()">Add User</button>
+
+<!-- List with Edit button -->
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.name }}
+    <button (click)="selectUser(user)">Edit</button>
+  </li>
+</ul>
+
+<!-- Edit form — shows only when user selected -->
+<div *ngIf="selectedUser">
+  <input [(ngModel)]="selectedUser.name"  />
+  <input [(ngModel)]="selectedUser.email" />
+  <button (click)="saveUser()">Save</button>
+</div>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.name }}
+    <button (click)="deleteUser(user.id)">Delete</button>
+  </li>
+</ul>

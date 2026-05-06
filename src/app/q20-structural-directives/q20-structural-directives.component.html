@@ -1,0 +1,6 @@
+<div class="question-card">
+      <h2>Q20 - One Structural Directive Per Element</h2>
+      <ng-container *ngFor="let user of users">
+        <p *ngIf="user.active">{{ user.name }}</p>
+      </ng-container>
+    </div>

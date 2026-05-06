@@ -1,0 +1,6 @@
+<div class="question-card">
+      <h2>Q26 - Email Validation</h2>
+      <input name="email" required email
+            [(ngModel)]="email" #emailCtrl="ngModel" placeholder="Email" />
+      <p class="error" *ngIf="emailCtrl.invalid && emailCtrl.touched">Enter a valid email.</p>
+    </div>

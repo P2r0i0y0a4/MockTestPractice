@@ -1,0 +1,12 @@
+<div class="question-card">
+      <h2>Q23 - Template Driven Form Binding</h2>
+      <form #userForm="ngForm">
+        <input name="name"
+               [(ngModel)]="user.name"
+                placeholder="Name" />
+        <input name="email"
+               [(ngModel)]="user.email" 
+               placeholder="Email" />
+      </form>
+      <p>{{ user | json }}</p>
+    </div>

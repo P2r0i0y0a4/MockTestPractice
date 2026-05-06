@@ -1,0 +1,5 @@
+<div class="question-card">
+      <h2>Q11 - Dynamic CSS Class</h2>
+      <input type="number" [(ngModel)]="marks" />
+      <p [ngClass]="{ pass: marks >= 50, fail: marks < 50 }">Marks: {{ marks }}</p>
+    </div>

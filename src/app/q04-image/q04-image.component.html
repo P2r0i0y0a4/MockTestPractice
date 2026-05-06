@@ -1,0 +1,22 @@
+<div style="padding: 20px">
+  <h2>Q4 — Dynamic Image Binding</h2>
+
+  <!--  WRONG way — causes broken image on first load -->
+  <!-- <img src="{{ imageUrl }}" /> -->
+
+  <!--  CORRECT way — property binding -->
+  <img [src]="imageUrl" [alt]="imageAlt" width="200" height="150"
+       style="border: 2px solid #ccc; border-radius: 8px; display:block; margin-bottom:10px" />
+
+  <p>Current URL: <code>{{ imageUrl }}</code></p>
+
+  <!-- Switch between images -->
+  <div style="margin-top: 10px">
+    <button
+      *ngFor="let img of images"
+      (click)="changeImage(img.url)"
+      style="margin-right: 8px">
+      {{ img.label }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="question-card">
+      <h2>Q34 - Use Only Reactive Form Approach</h2>
+      <form [formGroup]="form">
+        <input formControlName="name" placeholder="Name" />
+      </form>
+      <p>{{ form.value | json }}</p>
+    </div>

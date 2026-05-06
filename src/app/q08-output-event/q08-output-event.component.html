@@ -1,0 +1,5 @@
+<div class="question-card">
+      <h2>Q8 - Child to Parent Event Binding</h2>
+      <app-q08-child (messageSent)="receiveMessage($event)"></app-q08-child>
+      <p>Parent received: {{ childMessage || 'Waiting for event...' }}</p>
+    </div>

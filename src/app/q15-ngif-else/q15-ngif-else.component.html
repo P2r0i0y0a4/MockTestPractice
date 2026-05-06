@@ -1,0 +1,12 @@
+<div class="question-card">
+      <h2>Q15 - Correct *ngIf Logic</h2>
+
+      <button  (click)="isLoggedIn = !isLoggedIn">       
+        {{ isLoggedIn ? 'Logout' : 'Login' }}
+      </button>
+
+      <p *ngIf="isLoggedIn; else guest">Welcome user</p>
+     
+      <ng-template #guest><p>Please log in</p></ng-template>
+      
+</div>

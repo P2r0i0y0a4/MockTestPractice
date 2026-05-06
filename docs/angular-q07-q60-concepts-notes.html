@@ -1,0 +1,794 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular Q7-Q60 Concepts Notes</title>
+  <style>
+    @page { size: A4; margin: 18mm 16mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+      background: white;
+    }
+    .cover {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 5px solid #2563eb;
+      page-break-after: always;
+    }
+    .cover h1 {
+      margin: 0 0 14px;
+      color: #1d4ed8;
+      font-size: 42px;
+      letter-spacing: 0;
+    }
+    .cover p {
+      max-width: 680px;
+      font-size: 17px;
+    }
+    .badge {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+    h2 {
+      margin: 0 0 12px;
+      padding: 10px 12px;
+      border-left: 5px solid #2563eb;
+      background: #f1f5f9;
+      color: #111827;
+      font-size: 22px;
+      page-break-after: avoid;
+    }
+    section {
+      page-break-before: always;
+    }
+    section:first-of-type {
+      page-break-before: auto;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 12px;
+      margin: 11px 0;
+      padding: 12px;
+      border: 1px solid #d6dde8;
+      border-radius: 8px;
+      page-break-inside: avoid;
+      background: #ffffff;
+    }
+    .qnum {
+      align-self: start;
+      padding: 9px 0;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      font-weight: 700;
+    }
+    h3 {
+      margin: 0 0 6px;
+      color: #0f172a;
+      font-size: 16px;
+    }
+    p {
+      margin: 4px 0;
+      font-size: 12.5px;
+    }
+    pre {
+      margin: 5px 0 0;
+      padding: 8px;
+      border-radius: 6px;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      background: #0f172a;
+      color: #e5e7eb;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 11px;
+    }
+    .footer {
+      margin-top: 24px;
+      padding-top: 10px;
+      border-top: 1px solid #d6dde8;
+      color: #64748b;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <div class="badge">Angular 14 Practice Notes</div>
+    <h1>Q7-Q60 Concepts Explanation</h1>
+    <p>This PDF explains every concept used in your separated Angular components. Each question includes the concept, why it is used, and the important syntax to remember for viva, practicals, and revision.</p>
+    <p><strong>Project:</strong> angular-14-crud-example</p>
+  </div>
+  
+          <section>
+            <h2>Component Communication and Binding</h2>
+            
+      <article class="card">
+        <div class="qnum">Q7</div>
+        <div class="content">
+          <h3>Parent to child input binding</h3>
+          <p><strong>Concept used:</strong> @Input()</p>
+          <p><strong>Explanation:</strong> The child component declares an input property using @Input(). The parent sends data using property binding. This is used when a child must display or use a value owned by the parent.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>[message]=&quot;parentMessage&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q8</div>
+        <div class="content">
+          <h3>Child to parent event binding</h3>
+          <p><strong>Concept used:</strong> @Output() and EventEmitter</p>
+          <p><strong>Explanation:</strong> The child emits an event using EventEmitter. The parent listens to that event and receives the value through $event. This is used for button clicks, selected values, and child actions.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>(messageSent)=&quot;onChildMessage($event)&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q9</div>
+        <div class="content">
+          <h3>Disable button when input is empty</h3>
+          <p><strong>Concept used:</strong> Property binding</p>
+          <p><strong>Explanation:</strong> The disabled property of a button should be controlled by a boolean condition. trim() is useful because it treats spaces as empty input.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>[disabled]=&quot;!name.trim()&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q10</div>
+        <div class="content">
+          <h3>Avoid repeated function calls in template</h3>
+          <p><strong>Concept used:</strong> Precomputed property</p>
+          <p><strong>Explanation:</strong> Angular runs template expressions many times during change detection. Calling methods in templates can reduce performance. Calculate the value once in TypeScript and bind to a property.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>{{ total }}</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q11</div>
+        <div class="content">
+          <h3>Apply class dynamically</h3>
+          <p><strong>Concept used:</strong> ngClass</p>
+          <p><strong>Explanation:</strong> ngClass applies CSS classes based on conditions. It is useful when styles depend on values such as marks, status, or selected state.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>[ngClass]=&quot;{ pass: marks &gt;= 50, fail: marks &lt; 50 }&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q12</div>
+        <div class="content">
+          <h3>Fix multiple click events</h3>
+          <p><strong>Concept used:</strong> Event binding</p>
+          <p><strong>Explanation:</strong> Each button should call only the method related to its action. Separate handlers make the template clear and avoid accidental conflicts.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>(click)=&quot;add()&quot;</pre>
+        </div>
+      </article>
+    
+          </section>
+        
+          <section>
+            <h2>Structural Directives</h2>
+            
+      <article class="card">
+        <div class="qnum">Q13</div>
+        <div class="content">
+          <h3>Render users using a loop</h3>
+          <p><strong>Concept used:</strong> *ngFor</p>
+          <p><strong>Explanation:</strong> *ngFor repeats an element for every item in an array. If nothing displays, check that the array exists and the directive syntax is correct.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngFor=&quot;let user of users&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q14</div>
+        <div class="content">
+          <h3>Improve list rendering</h3>
+          <p><strong>Concept used:</strong> trackBy</p>
+          <p><strong>Explanation:</strong> trackBy tells Angular how to uniquely identify list items. It improves performance because Angular can reuse DOM elements instead of recreating them.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngFor=&quot;let user of users; trackBy: trackById&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q15</div>
+        <div class="content">
+          <h3>Display only one section</h3>
+          <p><strong>Concept used:</strong> *ngIf else</p>
+          <p><strong>Explanation:</strong> Use *ngIf with an else template to make sure only one block is rendered at a time.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngIf=&quot;isLoggedIn; else guest&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q16</div>
+        <div class="content">
+          <h3>Show loading until data arrives</h3>
+          <p><strong>Concept used:</strong> Conditional rendering</p>
+          <p><strong>Explanation:</strong> A loading variable controls the UI. Show the loading message while data is not ready, then show the real content.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngIf=&quot;loading; else dataBlock&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q17</div>
+        <div class="content">
+          <h3>Fallback for empty table</h3>
+          <p><strong>Concept used:</strong> *ngIf and ng-template</p>
+          <p><strong>Explanation:</strong> Before rendering rows, check whether the data array has items. If the array is empty, show a friendly fallback message.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngIf=&quot;rows.length; else emptyTable&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q18</div>
+        <div class="content">
+          <h3>Show fields based on dropdown</h3>
+          <p><strong>Concept used:</strong> *ngIf with ngModel</p>
+          <p><strong>Explanation:</strong> The selected dropdown value is stored in a property. Extra fields appear only when the selected value matches the condition.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngIf=&quot;type === &#x27;student&#x27;&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q19</div>
+        <div class="content">
+          <h3>Render nested lists</h3>
+          <p><strong>Concept used:</strong> Nested *ngFor</p>
+          <p><strong>Explanation:</strong> Use one loop for parent data and another loop inside it for child arrays. Each loop should have its own variable.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngFor=&quot;let employee of department.employees&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q20</div>
+        <div class="content">
+          <h3>Avoid multiple structural directives on one element</h3>
+          <p><strong>Concept used:</strong> ng-container</p>
+          <p><strong>Explanation:</strong> Angular allows only one structural directive on a single element. Use ng-container as a wrapper when *ngFor and *ngIf are both needed.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>&lt;ng-container *ngFor=&quot;let user of users&quot;&gt;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q21</div>
+        <div class="content">
+          <h3>Display first five items</h3>
+          <p><strong>Concept used:</strong> slice pipe</p>
+          <p><strong>Explanation:</strong> The slice pipe shows part of an array without changing the original array in TypeScript.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>items | slice:0:5</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q22</div>
+        <div class="content">
+          <h3>Highlight selected items</h3>
+          <p><strong>Concept used:</strong> Conditional styling</p>
+          <p><strong>Explanation:</strong> Store whether an item is selected, then apply a CSS class only when selected is true.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>[ngClass]=&quot;{ selected: item.selected }&quot;</pre>
+        </div>
+      </article>
+    
+          </section>
+        
+          <section>
+            <h2>Template Driven Forms</h2>
+            
+      <article class="card">
+        <div class="qnum">Q23</div>
+        <div class="content">
+          <h3>Capture user input</h3>
+          <p><strong>Concept used:</strong> FormsModule and ngModel</p>
+          <p><strong>Explanation:</strong> Template-driven forms use [(ngModel)] for two-way binding. Every input must have a name attribute so Angular can track it.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>name=&quot;email&quot; [(ngModel)]=&quot;user.email&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q24</div>
+        <div class="content">
+          <h3>Prevent invalid form submit</h3>
+          <p><strong>Concept used:</strong> required and form.invalid</p>
+          <p><strong>Explanation:</strong> Required fields make the form invalid until filled. The submit button can be disabled using the form invalid state.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>[disabled]=&quot;userForm.invalid&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q25</div>
+        <div class="content">
+          <h3>Show errors only after touch</h3>
+          <p><strong>Concept used:</strong> touched state</p>
+          <p><strong>Explanation:</strong> Validation messages should not appear immediately on page load. Use touched so errors show only after the user interacts with the field.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>*ngIf=&quot;nameCtrl.invalid &amp;&amp; nameCtrl.touched&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q26</div>
+        <div class="content">
+          <h3>Validate email format</h3>
+          <p><strong>Concept used:</strong> email validator</p>
+          <p><strong>Explanation:</strong> The email validator checks whether the typed value has a valid email format. Combine it with required when the field must not be empty.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>required email #emailCtrl=&quot;ngModel&quot;</pre>
+        </div>
+      </article>
+    
+          </section>
+        
+          <section>
+            <h2>Reactive Forms</h2>
+            
+      <article class="card">
+        <div class="qnum">Q27</div>
+        <div class="content">
+          <h3>Initialize form controls</h3>
+          <p><strong>Concept used:</strong> FormBuilder</p>
+          <p><strong>Explanation:</strong> Reactive forms are created in TypeScript. FormBuilder makes it easier to create FormGroup objects and validators.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.fb.group({ name: [&#x27;&#x27;, Validators.required] })</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q28</div>
+        <div class="content">
+          <h3>Validate password length</h3>
+          <p><strong>Concept used:</strong> Validators.minLength</p>
+          <p><strong>Explanation:</strong> Use minLength for passwords or fields that need a minimum number of characters. The template can check hasError(&#x27;minlength&#x27;).</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>Validators.minLength(6)</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q29</div>
+        <div class="content">
+          <h3>Reset after submit</h3>
+          <p><strong>Concept used:</strong> form.reset()</p>
+          <p><strong>Explanation:</strong> After successful submission, call reset() to clear all fields and restore the form state.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.form.reset()</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q30</div>
+        <div class="content">
+          <h3>Capture all field values</h3>
+          <p><strong>Concept used:</strong> FormGroup value</p>
+          <p><strong>Explanation:</strong> Every field must be part of the FormGroup and connected with formControlName. Then form.value contains all entered values.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.form.value</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q31</div>
+        <div class="content">
+          <h3>Conditionally required field</h3>
+          <p><strong>Concept used:</strong> Dynamic validators</p>
+          <p><strong>Explanation:</strong> A field can become required based on another field&#x27;s value. Add or clear validators and call updateValueAndValidity().</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>control.setValidators([Validators.required])</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q32</div>
+        <div class="content">
+          <h3>Dropdown updates another field</h3>
+          <p><strong>Concept used:</strong> valueChanges</p>
+          <p><strong>Explanation:</strong> valueChanges listens to control changes. When the dropdown changes, patchValue can update another control automatically.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.form.patchValue({ city: &#x27;Pune&#x27; })</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q33</div>
+        <div class="content">
+          <h3>Add repeated fields</h3>
+          <p><strong>Concept used:</strong> FormArray</p>
+          <p><strong>Explanation:</strong> FormArray is used for dynamic controls such as skills, phone numbers, or addresses. push() adds a new control.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.skills.push(this.fb.control(&#x27;&#x27;))</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q34</div>
+        <div class="content">
+          <h3>Use one form approach</h3>
+          <p><strong>Concept used:</strong> Consistent form style</p>
+          <p><strong>Explanation:</strong> Do not mix ngModel and reactive forms in the same form. Choose template-driven or reactive forms for one form.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>[formGroup]=&quot;form&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q35</div>
+        <div class="content">
+          <h3>Hide validation on load</h3>
+          <p><strong>Concept used:</strong> touched with reactive forms</p>
+          <p><strong>Explanation:</strong> Reactive validation messages should also check touched or dirty so they appear only after interaction.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>control.invalid &amp;&amp; control.touched</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q36</div>
+        <div class="content">
+          <h3>Disable submit until valid</h3>
+          <p><strong>Concept used:</strong> form.invalid</p>
+          <p><strong>Explanation:</strong> The full form validity can control the submit button. This prevents sending incomplete or invalid data.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>[disabled]=&quot;form.invalid&quot;</pre>
+        </div>
+      </article>
+    
+          </section>
+        
+          <section>
+            <h2>Services, HTTP and State</h2>
+            
+      <article class="card">
+        <div class="qnum">Q37</div>
+        <div class="content">
+          <h3>Move API logic to service</h3>
+          <p><strong>Concept used:</strong> Angular service</p>
+          <p><strong>Explanation:</strong> Components should handle UI. Services should handle reusable data and API logic. This keeps code clean and testable.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>constructor(private dataService: PracticeDataService) {}</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q38</div>
+        <div class="content">
+          <h3>Fetch data from API</h3>
+          <p><strong>Concept used:</strong> HttpClient.get</p>
+          <p><strong>Explanation:</strong> HttpClient.get() sends a GET request and returns an Observable. HttpClientModule must be imported in AppModule.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.http.get&lt;User[]&gt;(url)</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q39</div>
+        <div class="content">
+          <h3>Render API response</h3>
+          <p><strong>Concept used:</strong> subscribe and *ngFor</p>
+          <p><strong>Explanation:</strong> After subscribing to API data, store the response in an array property. The template displays it using *ngFor.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>users = response</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q40</div>
+        <div class="content">
+          <h3>Send POST payload</h3>
+          <p><strong>Concept used:</strong> HttpClient.post</p>
+          <p><strong>Explanation:</strong> POST requests need a URL and payload object. The payload contains the data sent to the server.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.http.post(url, userData)</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q41</div>
+        <div class="content">
+          <h3>Update UI after delete</h3>
+          <p><strong>Concept used:</strong> Refresh local data</p>
+          <p><strong>Explanation:</strong> After deleting, remove the item from the displayed array or re-fetch the data. The UI changes only when component data changes.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>users.filter(user =&gt; user.id !== id)</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q42</div>
+        <div class="content">
+          <h3>Share data across components</h3>
+          <p><strong>Concept used:</strong> BehaviorSubject</p>
+          <p><strong>Explanation:</strong> BehaviorSubject stores the latest value and emits it to all subscribers. It is useful for shared state.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>users$ = subject.asObservable()</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q43</div>
+        <div class="content">
+          <h3>Fetch on initialization</h3>
+          <p><strong>Concept used:</strong> ngOnInit</p>
+          <p><strong>Explanation:</strong> ngOnInit is the correct place to load data when a component starts. Constructor should mainly be used for dependency injection.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>ngOnInit(): void { this.loadData(); }</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q44</div>
+        <div class="content">
+          <h3>Handle API errors</h3>
+          <p><strong>Concept used:</strong> catchError</p>
+          <p><strong>Explanation:</strong> catchError prevents the app from crashing. It lets you display a message and return fallback data.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>catchError(() =&gt; of([]))</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q45</div>
+        <div class="content">
+          <h3>Avoid stale data after update</h3>
+          <p><strong>Concept used:</strong> Update or re-fetch</p>
+          <p><strong>Explanation:</strong> After updating data, update the local list or load the data again so the screen shows the latest value.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.loadUsers()</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q46</div>
+        <div class="content">
+          <h3>Remove duplicate API code</h3>
+          <p><strong>Concept used:</strong> Central service method</p>
+          <p><strong>Explanation:</strong> If many components use the same API logic, move it to one service method and call that method from components.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>dataService.getUsers()</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q47</div>
+        <div class="content">
+          <h3>Show loading during API call</h3>
+          <p><strong>Concept used:</strong> loading flag and finalize</p>
+          <p><strong>Explanation:</strong> Set loading true before the API call. Use finalize() to set loading false after success or failure.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>finalize(() =&gt; this.loading = false)</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q48</div>
+        <div class="content">
+          <h3>Avoid repeated API calls</h3>
+          <p><strong>Concept used:</strong> Do not call APIs in template</p>
+          <p><strong>Explanation:</strong> Methods used in templates can run many times. API calls should be done in ngOnInit or event handlers, not directly in interpolation.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>Load once in ngOnInit</pre>
+        </div>
+      </article>
+    
+          </section>
+        
+          <section>
+            <h2>Routing</h2>
+            
+      <article class="card">
+        <div class="qnum">Q49</div>
+        <div class="content">
+          <h3>Configure routing</h3>
+          <p><strong>Concept used:</strong> RouterModule</p>
+          <p><strong>Explanation:</strong> Routes map URL paths to components. RouterModule.forRoot(routes) enables routing in the application.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>{ path: &#x27;question/:id&#x27;, component: Q51RouteParamComponent }</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q50</div>
+        <div class="content">
+          <h3>Avoid page reload</h3>
+          <p><strong>Concept used:</strong> routerLink</p>
+          <p><strong>Explanation:</strong> Use routerLink instead of href for Angular navigation. routerLink changes route without refreshing the whole page.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>routerLink=&quot;/question/50&quot;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q51</div>
+        <div class="content">
+          <h3>Read route parameter</h3>
+          <p><strong>Concept used:</strong> ActivatedRoute</p>
+          <p><strong>Explanation:</strong> ActivatedRoute gives access to route parameters. paramMap reads values from URLs like /question/51.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>params.get(&#x27;id&#x27;)</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q52</div>
+        <div class="content">
+          <h3>Navigate from TypeScript</h3>
+          <p><strong>Concept used:</strong> Router.navigate</p>
+          <p><strong>Explanation:</strong> Programmatic navigation is used after actions such as successful form submission.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>this.router.navigate([&#x27;/submitted&#x27;])</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q53</div>
+        <div class="content">
+          <h3>Handle unknown URLs</h3>
+          <p><strong>Concept used:</strong> Wildcard route</p>
+          <p><strong>Explanation:</strong> The wildcard path catches all unknown routes and redirects to a safe page.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>{ path: &#x27;**&#x27;, redirectTo: &#x27;&#x27; }</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q54</div>
+        <div class="content">
+          <h3>Render child route</h3>
+          <p><strong>Concept used:</strong> Nested router-outlet</p>
+          <p><strong>Explanation:</strong> Child routes need a router-outlet inside the parent component template. The child component appears inside that outlet.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>&lt;router-outlet&gt;&lt;/router-outlet&gt;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q55</div>
+        <div class="content">
+          <h3>Pass query parameters</h3>
+          <p><strong>Concept used:</strong> queryParams</p>
+          <p><strong>Explanation:</strong> Query parameters are optional URL values like ?filter=active. They are useful for filters, search text, and page numbers.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>{ queryParams: { filter: &#x27;active&#x27; } }</pre>
+        </div>
+      </article>
+    
+          </section>
+        
+          <section>
+            <h2>Pipes and Mini App</h2>
+            
+      <article class="card">
+        <div class="qnum">Q56</div>
+        <div class="content">
+          <h3>Format date</h3>
+          <p><strong>Concept used:</strong> date pipe</p>
+          <p><strong>Explanation:</strong> The date pipe changes a raw date into a readable format without modifying the original value.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>today | date:&#x27;mediumDate&#x27;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q57</div>
+        <div class="content">
+          <h3>Display uppercase names</h3>
+          <p><strong>Concept used:</strong> uppercase pipe</p>
+          <p><strong>Explanation:</strong> The uppercase pipe changes text display only. The original data remains unchanged.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>name | uppercase</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q58</div>
+        <div class="content">
+          <h3>Truncate long text</h3>
+          <p><strong>Concept used:</strong> slice pipe</p>
+          <p><strong>Explanation:</strong> The slice pipe can shorten long strings in the UI. Add three dots after it for an ellipsis effect.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>text | slice:0:45</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q59</div>
+        <div class="content">
+          <h3>Format currency</h3>
+          <p><strong>Concept used:</strong> currency pipe</p>
+          <p><strong>Explanation:</strong> The currency pipe displays numbers as money with the selected currency symbol.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>price | currency:&#x27;INR&#x27;:&#x27;symbol&#x27;</pre>
+        </div>
+      </article>
+    
+
+      <article class="card">
+        <div class="qnum">Q60</div>
+        <div class="content">
+          <h3>Fix mini app</h3>
+          <p><strong>Concept used:</strong> Combined Angular concepts</p>
+          <p><strong>Explanation:</strong> The mini app combines list rendering, form validation, service data, and routing. Each feature must be correctly connected for the app to work.</p>
+          <p><strong>Important syntax:</strong></p>
+          <pre>form + *ngFor + service + routerLink</pre>
+        </div>
+      </article>
+    
+          </section>
+        
+  <div class="footer">Generated for Angular Q7-Q60 component practice.</div>
+</body>
+</html>
